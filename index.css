@@ -1,0 +1,210 @@
+/* Copyright 2013 The Chromium Authors. All rights reserved.
+ * Copyright 2019 LIHKG. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+html, body {
+  background: #fff;
+  font: 16px sans-serif;
+  padding: 0px;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+[id^=nav] svg {
+  vertical-align: middle;
+}
+
+#difficulty{
+  background: rgba(255, 255, 255, .8);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  height: 150px;
+  left: 50%;
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+#difficulty h1 {
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  text-align: center;
+}
+
+#difficulty .mode {
+  bottom: 0;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+}
+
+#easyMode,
+#hardMode {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  height: 40px;
+  line-height: 40px;
+  left: 50%;
+  margin-top: -25px;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+}
+
+#easyMode {
+  margin-left: -50px;
+}
+
+#hardMode {
+  color: #a00;
+  margin-left: 50px;
+}
+
+#navClose,
+#navGithub {
+  height: 32px;
+  line-height: 32px;
+  position: fixed;
+  text-align: center;
+  top: calc(20px + constant(safe-area-inset-top));
+  top: calc(20px + env(safe-area-inset-top));
+  width: 32px;
+  z-index: 2;
+}
+
+#navClose {
+  left: calc(20px + constant(safe-area-inset-left));
+  left: calc(20px + env(safe-area-inset-left));
+}
+
+#navGithub {
+  right: calc(20px + constant(safe-area-inset-right));
+  right: calc(20px + env(safe-area-inset-right));
+}
+
+#difficultyButton,
+#navScreenshot,
+#toggleShowName {
+  background: #686868;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: .9rem;
+  height: 32px;
+  line-height: 32px;
+  position: fixed;
+  text-align: center;
+  text-decoration: none;
+  top: 100px;
+  transform: translateX(-50%);
+  user-select: none;
+  z-index: 2;
+}
+
+#difficultyButton{
+  font-size: .8rem;
+  left: 50%;
+  width: 100px;
+  height: 30px;
+  background: #a00;
+  top: calc(50% - 120px); 
+}
+
+#difficultyButton.web{
+  top: auto;
+  bottom: 180px;
+}
+
+
+#navScreenshot {
+  left: calc(50% - (120px / 2) - .5rem);
+  padding-right: 8px;
+  width: 112px;
+}
+
+#navScreenshot.app { top: calc(50% + (150px / 2) + 40px); }
+#navScreenshot.web { top: 20px; }
+#navScreenshot.single { left: 50%; }
+
+#toggleShowName {
+  left: calc(50% + (120px / 2) + .5rem);
+  width: 120px;
+}
+
+#toggleShowName.app { top: calc(50% + (150px / 2) + 40px); }
+#toggleShowName.web { top: 20px; }
+
+.hidden {
+  display: none;
+}
+
+/* Offline page */
+.offline{
+  margin: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+  margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.offline .interstitial-wrapper {
+  color: #2b2b2b;
+  font-size: 1em;
+  height: 150px;
+  left: 50%;
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.iframe .interstitial-wrapper {
+  bottom: 25px;
+  top: auto;
+  transform: translateX(-50%);
+}
+
+.offline .runner-container {
+  height: 150px;
+  max-width: 600px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 44px;
+}
+
+.offline .runner-canvas {
+  height: 150px;
+  image-rendering: pixelated;
+  max-width: 600px;
+  opacity: 1;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.offline .controller {
+  height: 100%;
+  position: absolute;
+  width: 100vw;
+  z-index: 1;
+}
+
+#offline-resources {
+  display: none;
+}
